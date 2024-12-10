@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "E-Commerce Mall Admin Auth",
-  description: "E-Commerce Mall gives you Services",
+  description: "Admin Dashboard to Manage's E-Commerce Mall Data.",
 };
 
 export default function RootLayout({
