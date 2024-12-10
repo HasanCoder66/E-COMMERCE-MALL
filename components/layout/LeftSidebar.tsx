@@ -1,12 +1,15 @@
+"use client"
+
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-// import { navLinks } from "../../lib/constant";
 import { navLinks } from "@/lib/constant";
 
 const LeftSidebar = () => {
-  console.log(navLinks);
+  const pathName = usePathname()
+  
   return (
     <div className="h-screen left-0 top-0 sticky p-10 flex flex-col bg-blue-2 shadow-xl gap-16 max-lg:hidden">
       <Image src={"/logo.png"} alt="Logo" width={150} height={70} />
@@ -16,7 +19,7 @@ const LeftSidebar = () => {
           <Link
             href={link.url}
             key={link.label}
-            className="flex gap-4 text-body-medium"
+            className={`flex gap-4 text-body-medium ${pathName === link.url ? "text-blue-1": "text-grey-1"}`}
           >
             {" "}
             {link.icon} <p>{link.label}</p>
@@ -28,8 +31,6 @@ const LeftSidebar = () => {
         <UserButton />
         <p>Edit Profile</p>
       </div>
-
-
     </div>
   );
 };
