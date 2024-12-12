@@ -17,14 +17,17 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   value,
 }) => {
 
-  // console.log(value.url)
+  // console.log(value, 'value is here ===============================')
+
   const onUpload = (result: any) => {
+    // console.log(result);
     onChange(result.info.secure_url);
-    console.log(result);
   };
+
   return (
     <div>
-      <div className="mb-4 flex flex-wrap items-center gap-4 bg-black">
+      <div className="mb-4 flex flex-wrap items-center gap-4 ">
+        {/* <Image src="https://res.cloudinary.com/dc5escxz1/image/upload/v1734015224/hxyvc5pizmxtw9kp9mir.jpg" width={200} height={200} alt="Image"/> */}
         {value.map((url,i) => (
           <Image
             src={url}
